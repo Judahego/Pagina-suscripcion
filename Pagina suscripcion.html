@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripcion</title>
+    <link rel="stylesheet" href="paginasuscripcion.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="login">
+            <div class="formulario">
+            <h1>¡Mantente actualizado!</h1> 
+            <p>Unete a mas de 60.000 gerentes de producto que reciben
+                actualizaciones mensuales sobre:
+            </p>            
+            <div class="skils">
+               <div class="s1"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/1200px-Yes_Check_Circle.svg.png" alt="Descripción de la imagen" width="20px" height="20x">
+                <label>Descrubrimiento de productos y creacion de lo que importa.</label>
+               </div>
+               <div class="s2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/1200px-Yes_Check_Circle.svg.png" alt="Descripción de la imagen" width="20px" height="20x">
+                <label>Medir para garantizar que las actualizaciones sean un exito.</label>
+               </div>
+               <div class="s3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/1200px-Yes_Check_Circle.svg.png" alt="Descripción de la imagen" width="20px" height="20x">
+                <label>¡Y mucho más!</label>
+               </div>
+
+            </div>
+            <form method="post">
+                <div class="username">
+                    <form action="Pagina suscripcion(yes).html">
+                        <label for="email"></label>
+                        <input type="email" id="email" name="email">
+                        
+                        <label>Correo electronico</label>
+                </div>
+            </form>
+            <div class="boton">
+                <form id="miFormulario" action="Pagina suscripcion(yes).html">
+                    <a href="pagina2.html?usuario=nombre">
+                    <input type="submit" value="Suscribirse" onclick="verificarCondiciones(event)">
+                    </a>
+                </form>
+                <script>
+                    function verificarCondiciones(event) {
+                        var email = document.getElementById("email").value;
+                        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+                        if (!regex.test(email)) {
+                            event.preventDefault(); // Previene el envío del formulario
+                            alert("Por favor, ingresa una dirección de correo electrónico válida."); 
+                            var email = document.getElementById("email").value;
+                
+                                if ( email === "") {
+                                event.preventDefault(); // Previene el envío del formulario
+                                alert("Por favor, completa todos los campos antes de suscribirte.");
+                                
+                                }
+                            }
+                    }
+                </script>
+                <script>
+                    localStorage.setItem('email');
+                </script>
+            </div>
+            
+
+            </div>      
+            <div class="imagen">
+                <img class="imagenp" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQlndTgPUxDO74a2Ap2AtL70Gx54uy74YYal_KsRZJq0ASJmHGn" alt="" height="auto" width="400px">
+            </div>
+    </div>    
+</body>
+</html>
